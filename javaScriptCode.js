@@ -21,3 +21,6 @@ var levels = [
 let firstWorld = levels[0];//[1.1, 1.2, 1.3]
 var firstLevel = levels[0][1];// 1.2
 firstLevel = [0][1] = 1.4;//changes 1.2 to 1.4
+
+ver secondWorld = levels[1].pop()
+var thridWorld = levels[2].push(3.3)
