@@ -57,4 +57,21 @@ function movePlayer() {
     }
 }
 
-//For loops
+//For loops - more restrictive than while loops - predefined start point, and end point, and exit point
+for (startPoint; endPoint; iterator)
+{
+
+}
+
+var items = ["axe", "shirt", "knife"];
+var finalString = "In my inventory, I have ";
+
+for (let i = 0 ; i < items.length; i++) {
+    var itemName = items[i];
+    finalString += itemName + ", ";
+}
+
+// forEach loop startpoint and iterator
+items.forEach(function (element){
+    finalString += element + ", ";
+});
