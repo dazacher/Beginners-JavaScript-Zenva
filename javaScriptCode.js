@@ -1,26 +1,48 @@
-var inventory =["shirt", "axe", "bread"]
-//inventory = ["water", "pants"]
+function(parameters) {
+    function body
+    return outputs
+}
 
-let shirt = inventory[0] //shirt
-inventory[2] = "cheese";
 
-var length = inventory.length //3
-length = inventory[0].length //5 - how long the word shirt is
+var currentHealth = 50;
+var healAmount = 10;
 
-inventory.push("water");//sticks water onto the end of inventory
+function heal() {
+    currentHealth += healAmount;
+    function nested () {
+        //does not exist outside the heal function
+    }
+}
 
-let water = inventory.pop(); //removes the last item of the array - in this case water
+heal(); //curentHealth = 60
 
-//Multi-dimensional arrays ----> arrays of arrays
-var levels = [
-    [1.1, 1.2, 1.3],
-    [2.1, 2.2, 2.3, 2.4, 2.5],
-    [3.1, 3.2]
-];
+// func is a refrence to the entire functions
+var func = function heal() {
+    currentHealth += healAmount;
+}
 
-let firstWorld = levels[0];//[1.1, 1.2, 1.3]
-var firstLevel = levels[0][1];// 1.2
-firstLevel = [0][1] = 1.4;//changes 1.2 to 1.4
 
-ver secondWorld = levels[1].pop()
-var thridWorld = levels[2].push(3.3)
+
+//parameters are only inputs to a function
+var maxHealth = 100;
+var currentHealth = 50;
+//var healAmount = 10;
+
+function heal(healAmount) {
+    currentHealth += healAmount;
+}
+
+heal(10); // changes currentHealth to 60 by passing the value into the function without having to declare a variable
+
+function heal(healAmount = 10) {
+    var newHealth = currentHealth + healAmount;
+    currentHealth = newHealth > 100 ? maxHealth : newHealth;
+    return calculatePercent(currentHealth, maxHealth);
+}
+
+function calculatePercent (dividend, divisor) {
+    (dividend / divisor) * 100; //fuction immediately exits at this point and ignores any code after it
+}
+
+var result = heal(); //changes currentHealth to 60
+heal(50); //changes currentHealth to 100 and result = 100
